@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Card Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="cards">
+       <div class="card">
+        <div class="imgofcard">
+            <img src="card.png" alt="">
+            <div class="cardtime">23:39</div>
+        </div>
+        <div class="textofcard">
+         <div class="cardtitle"><h3>TSigma Web Development Course - Web Development Tutorials in</h3></div>
+         <ul class="carditems">
+            <li class="item channelname">code</li>
+            <li class="item views">700</li>
+            <li class="item Months">2 Months ago</li>
+         </ul>
+
+        </div>
+       </div>
+    </div>
+    <form action="#">
+        <div class="row">
+        <label for="getchname">Write Channel Name </label>
+        <input type="text" id="getchname">
+        </div>
+        <div class="row">
+        <label for="videotitle">Write video Title</label>
+        <input type="text" id="getvideotitle">
+        </div>
+        <div class="row">
+        <label for="getviews">Write video views </label>
+        <input type="number" id="getviews">
+        </div>
+        <div class="row">
+        <label for="getduration">Write video duration </label>
+        <input type="text" id="getduration">
+        </div>
+        <div class="row">
+        <label for="getmonths">Write Months </label>
+        <input type="text" id="getmonths">
+        </div>
+
+    <button class="btn-add">Add Card</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
