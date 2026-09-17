@@ -1,42 +1,71 @@
-import { skip } from "node:test";
-
-let numberbtns = document.querySelectorAll(".no-btns");
-let opt;
-let numb1;
-let numb2;
-let result;
-let output = document.querySelector(".output");
-const clear = document.querySelector("#clear");
-
-
-numberbtns.forEach( (btn) => {
-  if(btn.textContent === "C"){
-    console.log(btn.textContent);
-    cleareverything();
-  }
-  else{
-    btn.addEventListener("click", () => {
-      output.innerText = btn.textContent;
-    })
-  }
-}
-
-)
-
-function getnumber1(){
-
-}
-function getnumber2(){
-
-}
-function getoperation(){
-
-}
-function performoperation(){
-
-}
-function cleareverything(){
- clear.addEventListener("click",()=>{
-  output.textContent = "";
+let numb1 = "";
+let numb2 = "";
+let opt = "";
+let output= "";
+let result = document.querySelector(".output");
+const show = document.querySelector("#show");
+const numberbtns = document.querySelectorAll(".no-btns");
+const optbtns = document.querySelectorAll(".opt-btns");
+numberbtns.forEach((btn)=>{
+  btn.addEventListener("click",()=>{
+    if(opt === ""){
+      setNumber1(btn);
+      result.textContent = numb1;
+    }
+    else if( output===""){
+      setNumber2(btn);
+    }
+  })
 })
+optbtns.forEach((btn)=>{
+  btn.addEventListener("click",()=>{
+    if(btn.textContent != "="){
+    setopt(btn);
+    }
+    else{
+      output = btn.textContent;
+      showresult();
+    }
+  })
+})
+function setNumber1(btn){
+    numb1 += btn.textContent;
+    
+    return;
+
+}
+function setNumber2(btn){
+    numb2 += btn.textContent;
+    result.textContent += numb2;
+    return;
+
+}
+function setopt(btn){
+  opt = btn.textContent;
+  result.textContent += opt;
+}
+function getopt(){
+  return opt;
+}
+function performopt(){
+  let a = parseInt(numb1);
+  let b = parseInt(numb2);
+  if(opt === "+"){
+    return a + b;
+  }
+  else if(opt === "-"){
+    return a - b;
+  }
+  else if(opt === "X"){
+    return a * b;
+  }
+}
+function showresult(){
+  console.log(numb1 , opt ,numb2);
+  result.textContent = performopt();
+  numb1 = ""
+numb2 = ""
+opt = ""
+output="";
+
 }
