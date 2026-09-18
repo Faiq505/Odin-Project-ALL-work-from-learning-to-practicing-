@@ -2,8 +2,10 @@ let numb1 = "";
 let numb2 = "";
 let opt = "";
 let output= "";
+let save = 0;
 let result = document.querySelector(".output");
 const show = document.querySelector("#show");
+const del = document.querySelector("#Del");
 const numberbtns = document.querySelectorAll(".no-btns");
 const optbtns = document.querySelectorAll(".opt-btns");
 numberbtns.forEach((btn)=>{
@@ -21,6 +23,9 @@ optbtns.forEach((btn)=>{
   btn.addEventListener("click",()=>{
     if(btn.textContent != "="){
     setopt(btn);
+    }
+    else if(btn.textContent != "Del"){
+      remove();
     }
     else{
       output = btn.textContent;
@@ -59,6 +64,9 @@ function performopt(){
   else if(opt === "X"){
     return a * b;
   }
+}
+function remove(){
+  return;
 }
 function showresult(){
   console.log(numb1 , opt ,numb2);
