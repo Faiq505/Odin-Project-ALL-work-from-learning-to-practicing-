@@ -106,9 +106,9 @@ function performopt(btn){
 }
 
 function remove(){
-  let arr = output.textContent;
+  let arr = [output.textContent];
   let index = arr[length - 1];
-  output.textContent = arr[index];
+  output.textContent = arr[index]
 }
 function  showres(){
     output.textContent = result;
